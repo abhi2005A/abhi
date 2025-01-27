@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Wheels Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hot Wheels Fact</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Show Another Fact</button>
+    </div>
+    <script>
+        const hotWheelsFacts = [
+            "Hot Wheels was introduced by Mattel in 1968.",
+            "The first Hot Wheels cars were designed by a team led by Elliot Handler.",
+            "Hot Wheels cars are 1:64 scale models of real cars.",
+            "The original line featured 16 cars, including the Custom Camaro and the Mustang.",
+            "Hot Wheels has produced over 20,000 different models since its inception.",
+            "The iconic orange track was introduced in 1969 and has become synonymous with Hot Wheels.",
+            "Hot Wheels has collaborated with various brands, including Marvel, Star Wars, and Disney.",
+            "The brand has a dedicated fan base, with collectors often seeking rare and limited-edition models.",
+            "Hot Wheels has its own racing series, known as the Hot Wheels Legends Tour.",
+            "In 2018, Hot Wheels celebrated its 50th anniversary with special edition cars and events."
+        ];
+
+        function getRandomFact() {
+            const randomIndex = Math.floor(Math.random() * hotWheelsFacts.length);
+            return hotWheelsFacts[randomIndex];
+        }
+
+        document.getElementById('fact').innerText = getRandomFact();
+
+        document.getElementById('newFactButton').addEventListener('click', () => {
+            document.getElementById('fact').innerText = getRandomFact();
+        });
+    </script>
+</body>
+</html>
